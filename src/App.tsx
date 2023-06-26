@@ -18,12 +18,17 @@ const AppTarefas = () => {
 	const [tarefas, setTarefas] = useState([]);
 
 	const tratarClique = () => {
-		api.get("tarefas").then((response) => {
-			console.info(response.data.data);
-			const lista = response.data.data.map((item: any) =>  item.titulo);
-			console.info(lista);
-			setTarefas(lista);
-		});
+		api.get("tarefas").then(
+			(resposta) => {
+				console.log("Alô mundo")
+				console.info(resposta.data.data);
+				const lista = resposta.data.data.map(
+					(item: any) =>  item.titulo
+				);
+				console.info(lista);
+				setTarefas(lista);
+			}
+		);
 	};
 	return (
 		<div className="card">
